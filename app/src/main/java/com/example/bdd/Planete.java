@@ -1,12 +1,8 @@
 package com.example.bdd;
 
-import android.graphics.Bitmap;
-
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-
-import java.sql.Blob;
 
 @Entity
 public class Planete {
@@ -17,15 +13,12 @@ public class Planete {
     private String nom;
 
     @ColumnInfo(name = "size")
-    private String taille;
-    @ColumnInfo(name = "photo")
-    private Bitmap photo;
-    Planete(int uid, String nom, String taille, Bitmap photo){
+    private int taille;
+
+    Planete(int uid, String nom, int taille){
         this.uid = uid;
         this.nom = nom;
         this.taille = taille;
-        this.photo = photo;
-
     }
 
     public int getUid() {
@@ -36,12 +29,8 @@ public class Planete {
         return nom;
     }
 
-    public String getTaille() {
+    public int getTaille() {
         return taille;
     }
-    public Bitmap getphoto() {
-        return photo;
-    }
-
 
 }

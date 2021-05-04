@@ -1,17 +1,18 @@
 package com.example.bdd;
 
 import android.annotation.SuppressLint;
+import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 
 
 public class Donnee {
         private String principal;
         private String auxiliaire;
-         private Drawable image;
+         private Bitmap image;
 
 
     @SuppressLint("UseCompatLoadingForDrawables")
-    Donnee(String text1, String text2, Drawable image){
+    Donnee(String text1, String text2, Bitmap image){
             principal = text1;
             auxiliaire = text2;
             this.image= image;
@@ -25,7 +26,7 @@ public class Donnee {
         public String getAuxiliaire() {
             return auxiliaire;
         }
-        public Drawable getimage() {
+        public Bitmap getimage() {
         return image;
     }
 

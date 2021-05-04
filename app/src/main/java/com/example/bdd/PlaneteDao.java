@@ -33,4 +33,3 @@ public interface PlaneteDao {
     void insert(Planete planete);
 
 }
-

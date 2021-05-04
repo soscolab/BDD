@@ -1,35 +1,23 @@
 package com.example.bdd;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.testrecyclerview.MonRecyclerViewAdapteur;
-
-import java.io.ByteArrayOutputStream;
-import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity<objectByteArrayOutputStream> extends AppCompatActivity {
-    private RecyclerView mRecyclerView;
-    private MonRecyclerViewAdapteur mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-    CoordinatorLayout mcoordinatorLayout;
+public class MainActivity extends AppCompatActivity {
 
     final String PREFS_NAME = "preferences_file";
 
     TextView tv ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -74,20 +62,18 @@ public class MainActivity<objectByteArrayOutputStream> extends AppCompatActivity
     }
 
     private void initData(PlaneteDao planeteDao) {
-        Context mContext = getApplicationContext();
-
 
         ArrayList<Planete> planetes = new ArrayList<>();
-        Blob img = (Blob) mContext.getResources().getDrawable(R.drawable.pic1);
-        planetes.add(new Planete(1,"Mercure","4900", img));
-        planetes.add(new Planete(2,"Venus","12000",img));
-        planetes.add(new Planete(3,"Terre","12800",img));
-        planetes.add(new Planete(4,"Mars","6800",img));
-        planetes.add(new Planete(5,"Jupiter","144000",img));
-        planetes.add(new Planete(6,"Saturne","120000",img));
-        planetes.add(new Planete(7,"Uranus","52000",img));
-        planetes.add(new Planete(8,"Neptune","50000",img));
-        planetes.add(new Planete(9,"Pluton","2300",img));
+
+        planetes.add(new Planete(1,"Mercure",4900));
+        planetes.add(new Planete(2,"Venus",12000));
+        planetes.add(new Planete(3,"Terre",12800));
+        planetes.add(new Planete(4,"Mars",6800));
+        planetes.add(new Planete(5,"Jupiter",144000));
+        planetes.add(new Planete(6,"Saturne",120000));
+        planetes.add(new Planete(7,"Uranus",52000));
+        planetes.add(new Planete(8,"Neptune",50000));
+        planetes.add(new Planete(9,"Pluton",2300));
 
         for (int index = 0; index < planetes.size(); index++) {
             Planete planete = planetes.get(index);
