@@ -13,9 +13,9 @@ public class Planete {
     private String nom;
 
     @ColumnInfo(name = "size")
-    private int taille;
+    private String taille;
 
-    Planete(int uid, String nom, int taille){
+    Planete(int uid, String nom, String taille){
         this.uid = uid;
         this.nom = nom;
         this.taille = taille;
@@ -29,7 +29,7 @@ public class Planete {
         return nom;
     }
 
-    public int getTaille() {
+    public String getTaille() {
         return taille;
     }
 
