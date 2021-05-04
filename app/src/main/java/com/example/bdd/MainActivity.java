@@ -68,19 +68,6 @@ public class MainActivity<objectByteArrayOutputStream> extends AppCompatActivity
         }).start();
     }
 
-  /*  public byte[] getBitmapAsByteArray(Drawable bitmap) {
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 0, outputStream);
-        return outputStream.toByteArray();
-    }
-
-        @SuppressLint("UseCompatLoadingForDrawables")
-        byte[] imgByte = getBitmapAsByteArray(mContext.getResources().getDrawable(R.drawable.pic1));
-
-*/
-
-
-
 
 
     private void initData(PlaneteDao planeteDao) {
